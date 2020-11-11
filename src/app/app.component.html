@@ -1,0 +1,56 @@
+
+<!-- Navegacion que tendran todas las pantallas-->
+
+<div *ngIf="login; else bloque">
+    <!-- Navegacion que tendran todas las pantallas-->
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" routerLink="main" routerLinkActive="active">Agenda Telefonica</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="main" routerLinkActive="active">Home</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" routerLink="crear" routerLinkActive="active">Nuevo</a>
+      </li>
+    </ul>
+	<router-outlet></router-outlet>
+</div>
+
+
+<ng-template #bloque>
+	<div class="container login-container">
+            <div class="row">
+                <div class="col login-form-1">
+                    <h2>Login..</h2>
+                    <form (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Usuario..."  [(ngModel)]="campos.usuario" name="usuario"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Contraseña..."[(ngModel)]="campos.contra" name="contra" />
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btnSubmit btn btn-primary" value="Login" />
+                        </div>
+                        <div class="form-group">
+                            <a href="#" class="ForgetPwd">Forget Password?</a>
+                        </div>
+                    </form>
+                </div>
+			</div>
+	</div>
+</ng-template>
+
+
+
+
+
+
+
+
+
+
+
+
+
